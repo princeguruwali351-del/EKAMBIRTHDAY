@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="hi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday Ekam 🎂</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#14081f;--ink:#fff3e6;--pink:#ff8fb1;--lav:#9b7bff;--gold:#ffd98a;--mint:#7fe3d0;--glass:rgba(255,255,255,.08);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.55 Fredoka,system-ui,sans-serif;overflow-x:hidden;color-scheme:dark}
+h2{font-size:clamp(26px,5vw,38px);margin-bottom:26px;line-height:1.2}h3{margin-bottom:14px}
+.sec{padding:80px 20px;max-width:860px;margin:auto;text-align:center}
+.box{background:var(--glass);border:1px solid rgba(255,255,255,.15);border-radius:28px;padding:24px;backdrop-filter:blur(8px)}
+.btn,.tab{font:600 16px Fredoka,sans-serif;color:var(--ink);background:linear-gradient(135deg,var(--pink),var(--lav));border:0;border-radius:99px;padding:12px 26px;cursor:pointer;text-decoration:none;display:inline-block;transition:transform .15s}
+.btn:hover,.tab:hover{transform:scale(1.06)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+#pre{position:fixed;inset:0;z-index:50;background:var(--bg);display:grid;place-content:center;justify-items:center;gap:18px;transition:transform 1s cubic-bezier(.7,0,.2,1)}
+#pre.go{transform:translateY(-100%)}
+#pt{font:700 clamp(34px,9vw,70px) Fredoka;color:var(--gold);text-shadow:0 0 24px var(--pink)}
+#pt span{display:inline-block;opacity:0;animation:pop .6s forwards}
+@keyframes pop{from{opacity:0;transform:translateY(30px) rotate(10deg)}to{opacity:1;transform:none}}
+.bar{width:min(300px,70vw);height:8px;background:var(--glass);border-radius:9px;overflow:hidden}
+#pb{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--gold));box-shadow:0 0 12px var(--pink)}
+#prog{position:fixed;top:0;left:0;height:4px;width:100%;transform:scaleX(0);transform-origin:left;background:var(--gold);z-index:40}
+#mus{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);right:14px;z-index:40;width:44px;height:44px;border-radius:50%;border:0;background:var(--glass);font-size:20px;cursor:pointer}
+#toast{position:fixed;bottom:calc(env(safe-area-inset-bottom,0px) + 24px);left:50%;transform:translate(-50%,120px);background:var(--gold);color:#3a1650;padding:12px 22px;border-radius:99px;font-weight:600;z-index:60;transition:transform .4s;max-width:90vw}
+#toast.on{transform:translate(-50%,0)}
+#hero{position:relative;height:100vh;min-height:560px;display:grid;place-items:center;text-align:center;overflow:hidden}
+#bg{position:absolute;inset:0;width:100%;height:100%}
+.hc{position:relative;pointer-events:none;padding:20px}.hc a{pointer-events:auto}
+.hc p:first-child{font:700 clamp(24px,6vw,44px) Fredoka;letter-spacing:.04em}
+#nm{font:600 clamp(96px,28vw,230px)/1 Caveat;color:var(--gold);text-shadow:0 0 40px var(--pink),0 0 90px var(--lav);pointer-events:auto;cursor:pointer;user-select:none}
+.sub{margin:6px 0 26px;font-size:18px}
+#clock{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+#clock div{background:var(--glass);border-radius:22px;padding:16px 18px;min-width:84px}
+#clock b{display:block;font-size:34px;color:var(--gold)}
+#agetxt{margin-top:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px}
+.tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.tab{background:var(--glass)}.tab.on{background:linear-gradient(135deg,var(--pink),var(--lav))}
+#arena{position:relative;height:320px;overflow:hidden;border:2px dashed rgba(255,255,255,.25);border-radius:22px;margin:14px 0;touch-action:manipulation}
+.bl{position:absolute;bottom:-70px;width:48px;height:60px;border-radius:50% 50% 48% 48%;cursor:pointer;animation:rise 4s linear forwards}
+@keyframes rise{to{transform:translateY(-420px)}}
+#mg{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:360px;margin:14px auto}
+.mc{aspect-ratio:1;border-radius:16px;border:0;background:var(--lav);font-size:32px;cursor:pointer}.mc.up{background:var(--glass)}
+#wr{font-size:24px;min-height:70px;color:var(--gold);margin:16px 0;display:grid;place-items:center}
+#cs{display:flex;gap:22px;justify-content:center;margin-top:30px}
+.cd{position:relative;width:14px;height:48px;border:0;border-radius:4px;background:repeating-linear-gradient(45deg,var(--pink) 0 8px,#fff 8px 16px);cursor:pointer}
+.cd::before{content:'';position:absolute;top:-22px;left:50%;width:14px;height:20px;margin-left:-7px;background:radial-gradient(#fff 10%,#ffb347 55%,transparent 70%);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;animation:fl .25s infinite alternate}
+.cd.off::before{display:none}
+@keyframes fl{to{transform:scale(1.15) translateY(-2px)}}
+.ck{font-size:clamp(100px,26vw,150px);line-height:1.1}
+#lt{white-space:pre-wrap;font:600 clamp(22px,4.5vw,28px)/1.4 Caveat;text-align:left;margin:18px 0;min-height:60px}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+/* ---- v2 modern layer ---- */
+body{padding-bottom:70px}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background:radial-gradient(40vmax 40vmax at 15% 20%,rgba(155,123,255,.35),transparent 60%),radial-gradient(35vmax 35vmax at 85% 30%,rgba(255,143,177,.28),transparent 60%),radial-gradient(40vmax 40vmax at 50% 95%,rgba(127,227,208,.18),transparent 60%);animation:drift 16s ease-in-out infinite alternate}
+@keyframes drift{to{transform:scale(1.25) rotate(8deg)}}
+h2{background:linear-gradient(90deg,var(--gold),var(--pink),var(--lav));-webkit-background-clip:text;background-clip:text;color:transparent}
+.box{background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.04));box-shadow:0 24px 60px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.22)}
+#clock b{font-variant-numeric:tabular-nums}
+#nm{background:linear-gradient(90deg,var(--gold),var(--pink),var(--lav),var(--gold));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 0 30px rgba(255,143,177,.55));animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:300% 0}}
+.hc p:first-of-type{font:700 clamp(24px,6vw,44px) Fredoka;letter-spacing:.04em}
+#av{position:relative;isolation:isolate;width:112px;height:112px;margin:0 auto 16px;border-radius:50%;background:#2a1244;display:grid;place-items:center;font-size:48px}
+#av::before{content:'';position:absolute;inset:-5px;border-radius:50%;z-index:-1;background:conic-gradient(var(--pink),var(--gold),var(--lav),var(--pink));animation:spin 5s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#av img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+.mq{overflow:hidden;white-space:nowrap;padding:14px 0;border-block:1px solid rgba(255,255,255,.14)}
+#mqi{display:inline-block;font:700 clamp(30px,7vw,54px) Fredoka;color:transparent;-webkit-text-stroke:1.5px var(--pink);animation:mq 22s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---- Romantic Memories Section (Separated Photos & Videos) ---- */
+.sec-sub{margin:-14px 0 26px;font-size:clamp(15px,3.8vw,18px);color:var(--ink);opacity:.9}
+.mem-sec-title{text-align:left;margin:40px 0 15px;font-size:24px;color:var(--gold);border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:10px}
+.mem-grid{display:grid;gap:22px;margin-top:10px}
+.photos-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.videos-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+
+.mem-card{position:relative;border-radius:24px;overflow:hidden;background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(10px);box-shadow:0 14px 35px rgba(0,0,0,.35),0 0 20px rgba(255,143,177,.15);cursor:pointer;transition:transform .3s ease,box-shadow .3s ease;display:flex;flex-direction:column}
+.mem-card:hover{transform:translateY(-6px);box-shadow:0 20px 42px rgba(0,0,0,.45),0 0 28px rgba(255,143,177,.35)}
+.mem-media-wrap{position:relative;width:100%;overflow:hidden;background:#230f38;display:grid;place-items:center}
+.photos-grid .mem-media-wrap{aspect-ratio:4/5}
+.videos-grid .mem-media-wrap{aspect-ratio:16/9}
+
+.mem-card img,.mem-card video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+.mem-card:hover img{transform:scale(1.04)}
+
+/* Play Icon Overlay for Videos */
+.play-icon{position:absolute;inset:0;margin:auto;width:60px;height:60px;background:rgba(20,8,31,0.6);border-radius:50%;display:grid;place-items:center;font-size:24px;color:var(--gold);border:2px solid rgba(255,255,255,0.4);backdrop-filter:blur(4px);z-index:3;transition:transform 0.3s,background 0.3s;padding-left:4px; /* Center the play triangle visually */}
+.mem-card:hover .play-icon{transform:scale(1.1);background:rgba(255,143,177,0.8);color:#fff;border-color:#fff}
+
+.mem-badge{position:absolute;top:12px;right:12px;padding:4px 10px;border-radius:99px;font-size:12px;font-weight:600;background:rgba(20,8,31,.75);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(6px);color:var(--gold);z-index:2}
+.mem-caption{padding:14px 16px;font-weight:600;font-size:15px;color:var(--ink);text-align:center;background:linear-gradient(180deg,transparent,rgba(20,8,31,.85))}
+.mem-placeholder{display:grid;place-content:center;text-align:center;gap:8px;padding:20px;font-size:40px;color:var(--pink)}
+.mem-placeholder small{font-size:13px;color:var(--ink);opacity:.85}
+
+/* Lightbox Modal */
+#lightbox{position:fixed;inset:0;z-index:100;background:rgba(12,4,20,.88);backdrop-filter:blur(14px);display:none;place-items:center;padding:20px;opacity:0;transition:opacity .3s ease}
+#lightbox.active{display:grid;opacity:1}
+#lightbox-body{position:relative;max-width:min(90vw,850px);max-height:85vh;display:flex;flex-direction:column;align-items:center;gap:12px;width:100%}
+#lightbox-body img,#lightbox-body video{max-width:100%;max-height:72vh;border-radius:20px;border:1px solid rgba(255,255,255,.25);box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 35px rgba(255,143,177,.35);object-fit:contain;background:#000}
+#lightbox-body video{width:100%} /* Ensure video expands nicely in lightbox */
+#lightbox-caption{color:var(--gold);font-size:clamp(16px,4vw,20px);font-weight:600;text-align:center;text-shadow:0 0 14px rgba(255,217,138,.4)}
+#lightbox-close{position:absolute;top:-46px;right:-4px;background:var(--glass);border:1px solid rgba(255,255,255,.3);color:#fff;width:38px;height:38px;border-radius:50%;font-size:22px;cursor:pointer;display:grid;place-items:center;transition:transform .2s,background .2s;z-index:10}
+#lightbox-close:hover{transform:scale(1.1);background:rgba(255,143,177,.4)}
+
+.ctl{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:18px}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+#dock{position:fixed;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);left:50%;transform:translateX(-50%);display:flex;gap:4px;padding:6px 10px;border-radius:99px;background:rgba(20,8,31,.75);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.2);box-shadow:0 12px 30px rgba(0,0,0,.45);z-index:40}
+#dock a{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;text-decoration:none;font-size:18px;transition:transform .2s,background .2s}
+#dock a:hover{background:var(--glass);transform:translateY(-4px) scale(1.2)}
+#toast{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
+#cur{position:fixed;left:-50px;top:-50px;width:28px;height:28px;margin:-14px 0 0 -14px;border:2px solid var(--gold);border-radius:50%;pointer-events:none;z-index:99;transition:width .2s,height .2s,margin .2s,background .2s}
+#cur.big{width:56px;height:56px;margin:-28px 0 0 -28px;background:rgba(255,143,177,.25)}
+</style></head><body>
+<div id="pre"><div id="pt"></div><div class="bar"><i id="pb"></i></div><p id="pp">0%</p><button class="btn" id="enter" hidden>Tap to enter 🎉</button></div>
+<div id="prog"></div><button id="mus" aria-label="Music on/off">🔇</button><div id="toast" role="status"></div>
+
+<header id="hero"><canvas id="bg"></canvas><div class="hc"><div id="av"></div><p>Happy birthday</p><h1 id="nm">Ekam</h1><p class="sub">Aaj ka din: 100% tumhara, 0% responsibilities 🎈</p><a href="#age" class="btn">Neeche scroll karo 👇</a></div></header>
+
+<div class="mq"><div id="mqi"></div></div>
+
+<section class="sec" id="age"><h2>Apne ne itna time jee liya hai ⏳</h2><div id="clock"></div><p id="agetxt"></p></section>
+
+<section class="sec" id="memories">
+  <h2>Our Little Memories 📸🎥</h2>
+  <p class="sec-sub">Some moments I would always want to keep close to my heart ❤️</p>
+  
+  <h3 class="mem-sec-title">Photos 📸</h3>
+  <div id="photos-container" class="mem-grid photos-grid"></div>
+
+  <h3 class="mem-sec-title">Videos 🎥</h3>
+  <div id="videos-container" class="mem-grid videos-grid"></div>
+</section>
+
+<section class="sec" id="games"><h2>Games zone 🎮</h2>
+<div class="tabs"><button class="tab on" data-i="0">🎈 Balloon pop</button><button class="tab" data-i="1">🃏 Memory match</button><button class="tab" data-i="2">🎡 Surprise spin</button></div>
+<div class="box">
+<div class="gp"><p>20 second mein jitne balloons phod sako!</p><div id="arena"></div><p id="bmsg">Score: 0 · Time: 20s</p><br><button class="btn" id="bstart">Start 🎯</button></div>
+<div class="gp" hidden><p id="mm">Pairs milao 💖</p><div id="mg"></div><button class="btn" id="mr">Phir se khelo</button></div>
+<div class="gp" hidden><p>Spin karo, jo aaye woh karna padega 😈</p><div id="wr">❓</div><button class="btn" id="spin">Spin 🎡</button></div>
+</div></section>
+
+<section class="sec" id="cake"><h2>Wish maango, phir candles bujhao 🕯️</h2><div id="cs"></div><div class="ck">🎂</div><p id="cm">Candles pe tap karo</p></section>
+
+<section class="sec" id="letter"><div class="box"><h2>Ek chhoti si chitthi 💖</h2><div id="lt"></div><button class="btn" id="lb">Chitthi kholo 💌</button> <button class="btn" id="rp" hidden>Replay 🔁</button></div></section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Media Preview">
+  <div id="lightbox-body">
+    <button id="lightbox-close" aria-label="Close modal">&times;</button>
+    <div id="lightbox-content"></div>
+    <div id="lightbox-caption"></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.9.2/confetti.browser.min.js"></script>
+<script>
+/* ================================
+   EKAM MEMORIES — EDIT HERE
+   Images & Videos Arrays
+================================ */
+const MEMORIES = [
+  {
+    type: "image",
+    src: "https://res.cloudinary.com/x9p7veha/image/upload/v1791289964/WhatsApp_Image_2026-10-06_at_5.50.19_PM.jpg",
+    caption: "Pta nhi kyo pr mnu ih pic dekh k bhut mazza anda aa 😂❤️"
+  },
+  {
+    type: "video",
+    src: "https://res.cloudinary.com/x9p7veha/video/upload/v1791291628/WhatsApp_Video_2026-10-06_at_6.30.07_PM.mp4",
+    caption: "A moment worth remembering 🎥"
+  },
+  {
+    type: "image",
+    src: "https://res.cloudinary.com/x9p7veha/image/upload/v1791289955/WhatsApp_Image_2026-10-06_at_5.48.46_PM.jpg",
+    caption: "One of my favourite moment ❤️"
+  },
+  {
+    type: "image",
+    src: "https://res.cloudinary.com/x9p7veha/image/upload/v1791289955/WhatsApp_Image_2026-10-06_at_5.54.13_PM.jpg",
+    caption: "Always making me smile ✨"
+  },
+  {
+    type: "video",
+    src: "https://res.cloudinary.com/x9p7veha/video/upload/v1791289970/WhatsApp_Video_2026-10-06_at_5.51.54_PM.mp4",
+    caption: " My Drama Queen 👑"
+  },
+  {
+    type: "image",
+    src: "https://res.cloudinary.com/x9p7veha/image/upload/v1791289954/WhatsApp_Image_2026-10-06_at_5.52.28_PM.jpg",
+    caption: "Ekampreet Kaur ji ❤️"
+  },
+  {
+    type: "image",
+    src: "https://res.cloudinary.com/x9p7veha/image/upload/v1791289954/WhatsApp_Image_2026-10-06_at_5.48.52_PM.jpg",
+    caption: "Kept close to my heart 💖"
+  }
+];
+
+/* ===== EDIT YAHAN: naam, DOB, letter ===== */
+const NAME = "Ekam", DOB = "2006-10-08";
+const LETTER = `Happy Birthday Ekam (BEBO). ❤️,
+
+
+Waheguru tenu hamesha khush rakhe, teri har ik wish, har ik supna pura hove. Jithe vi hove, jado vi kise vi time tenu kise vi cheez di lod hove, bas zaroor dassi.
+
+Baaki Ekam, teri life ch pata nahi main hun ki haan, par meri life ch main tenu haje vi pehla vang hi manda haan te pehla vang hi pyar karda haan. ❤️
+
+Baaki jo Waheguru nu sahi lagge, oh hi hovega.
+
+Happy Birthday once again, Ekam. 🎂
+Love you. ❤️
+
+Mainu pata hai shayad isda koi reply nahi auna tere vallon, par mere dil ch si ke eh sab tenu likhan, is karke likh ditta.
+
+Te je main kujh zyada bol gaya hovan, ya kujh galat likh ditta hove, sorry. 🥺
+
+Happy Birthday, Ekam. ❤️
+Hamesha khush rahi.`;
+
+/* ================================================= */
+const $= s => document.querySelector(s),$$ = s => [...document.querySelectorAll(s)];
+const cols = ['#ff8fb1', '#9b7bff', '#ffd98a', '#7fe3d0'];
+const boom = (o = {}) => confetti({ particleCount: 130, spread: 90, origin: { y: .6 }, colors: cols, ...o });
+const toast = t => { const e = $('#toast'); e.textContent = t; e.classList.add('on'); setTimeout(() => e.classList.remove('on'), 2600); };
+const mkLetters = () => { $('#pt').innerHTML = [...`Welcome ${NAME} ✨`].map((c, i) => `<span style="animation-delay:${i * .09}s">${c == ' ' ? '&nbsp;' : c}</span>`).join(''); };
+mkLetters();
+
+/* Preloader */
+let p = 0;
+const pi = setInterval(() => {
+  p = Math.min(100, p + Math.random() * 9 + 3);
+  $('#pb').style.width = p + '%';
+  $('#pp').textContent = Math.floor(p) + '%';
+  if (p >= 100) {
+    clearInterval(pi);
+    $('#enter').hidden = false;
+  }
+}, 120);
+$('#enter').onclick = () => {
+  $('#pre').classList.add('go');
+  boom({ origin: { y: .85 } });
+  $('#mus').click();
+  setTimeout(() => $('#pre').remove(), 1100);
+};
+
+/* Music */
+const M = [[7, .75], [7, .25], [9, 1], [7, 1], [12, 1], [11, 2], [7, .75], [7, .25], [9, 1], [7, 1], [14, 1], [12, 2], [7, .75], [7, .25], [19, 1], [16, 1], [12, 1], [11, 1], [9, 1], [17, .75], [17, .25], [16, 1], [12, 1], [14, 1], [12, 2]];
+let ac, on = false, tm;
+function tune() {
+  if (!on) return;
+  let t = ac.currentTime + .1;
+  M.forEach(([n, d]) => {
+    const o = ac.createOscillator(), g = ac.createGain(), l = d * .42;
+    o.type = 'triangle';
+    o.frequency.value = 261.63 * 2 ** (n / 12);
+    g.gain.setValueAtTime(.12, t);
+    g.gain.exponentialRampToValueAtTime(.001, t + l);
+    o.connect(g).connect(ac.destination);
+    o.start(t);
+    o.stop(t + l);
+    t += l;
+  });
+  tm = setTimeout(tune, (t - ac.currentTime + 1.5) * 1000);
+}
+$('#mus').onclick = () => {
+  on = !on;
+  $('#mus').textContent = on ? '🔊' : '🔇';
+  if (on) {
+    ac = new (window.AudioContext || window.webkitAudioContext)();
+    tune();
+  } else {
+    clearTimeout(tm);
+    ac && ac.close();
+  }
+};
+
+/* 3D hero */
+(() => {
+  const c = $('#bg'), r = new THREE.WebGLRenderer({ canvas: c, alpha: true, antialias: true }), s = new THREE.Scene(), cam = new THREE.PerspectiveCamera(55, 1, .1, 100);
+  cam.position.z = 9;
+  r.setPixelRatio(Math.min(devicePixelRatio, 2));
+  s.add(new THREE.AmbientLight(0xffffff, .75));
+  const L = new THREE.PointLight(0xffffff, 1.3);
+  L.position.set(5, 6, 8);
+  s.add(L);
+  const B = [];
+  for (let i = 0; i < 16; i++) {
+    const m = new THREE.Mesh(new THREE.SphereGeometry(.6, 24, 24), new THREE.MeshStandardMaterial({ color: cols[i % 4], roughness: .25 }));
+    m.scale.y = 1.25;
+    m.position.set((Math.random() - .5) * 16, (Math.random() - .5) * 12, (Math.random() - .5) * 6 - 1);
+    m.userData.v = .008 + Math.random() * .014;
+    s.add(m);
+    B.push(m);
+  }
+  const g = new THREE.BufferGeometry(), a = [];
+  for (let i = 0; i < 300; i++) a.push((Math.random() - .5) * 30, (Math.random() - .5) * 20, -6 - Math.random() * 6);
+  g.setAttribute('position', new THREE.Float32BufferAttribute(a, 3));
+  s.add(new THREE.Points(g, new THREE.PointsMaterial({ color: 0xffd98a, size: .07 })));
+  const rs = () => {
+    const w = c.clientWidth, h = c.clientHeight;
+    r.setSize(w, h, false);
+    cam.aspect = w / h;
+    cam.updateProjectionMatrix();
+  };
+  rs();
+  addEventListener('resize', rs);
+  let mx = 0, my = 0;
+  addEventListener('pointermove', e => {
+    mx = e.clientX / innerWidth - .5;
+    my = e.clientY / innerHeight - .5;
+  });
+  (function f() {
+    B.forEach(m => {
+      m.position.y += m.userData.v;
+      m.rotation.y += .01;
+      if (m.position.y > 7) m.position.y = -7;
+    });
+    cam.position.x += (mx * 3 - cam.position.x) * .05;
+    cam.position.y += (-my * 2 - cam.position.y) * .05;
+    cam.lookAt(0, 0, 0);
+    r.render(s, cam);
+    requestAnimationFrame(f);
+  })();
+})();
+
+/* Scroll bar + easter egg */
+addEventListener('scroll', () => { $('#prog').style.transform = `scaleX(${scrollY / (document.body.scrollHeight - innerHeight)})`; });
+let nc = 0;
+$('#nm').onclick = () => {
+  if (++nc == 5) {
+    nc = 0;
+    boom({ particleCount: 200 });
+    toast(`Secret: ${NAME} tum sabse best ho 🤫💖`);
+  }
+};
+
+/* Age clock */
+const d0 = new Date(DOB + "T00:00:00");
+function tick() {
+  const ms = Date.now() - d0;
+  const D = Math.floor(ms / 864e5);
+  const H = Math.floor(ms / 36e5) % 24;
+  const Mi = Math.floor(ms / 6e4) % 60;
+  const S = Math.floor(ms / 1e3) % 60;
+  $('#clock').innerHTML = [[D, 'din'], [H, 'ghante'], [Mi, 'minute'], [S, 'second']].map(([v, l]) => `<div><b>${v}</b>${l}</div>`).join('');
+  $('#agetxt').textContent = `${Math.floor(ms / 315576e5)} saal ke ho gaye, par bachpana abhi bhi 100% intact 😜`;
+}
+tick();
+setInterval(tick, 1000);
+
+/* Render Memories Gallery (Separated) */
+const isDefaultLink = s => !s || s.includes('PASTE_') || s.includes('YOUR_');
+function renderMemories() {
+  const pCont = $('#photos-container');
+  const vCont = $('#videos-container');
+  let pHTML = '', vHTML = '';
+
+  MEMORIES.forEach((item, idx) => {
+    const isVid = item.type === 'video';
+    const isUnset = isDefaultLink(item.src);
+    
+    // For videos, #t=0.001 loads the first frame as thumbnail on mobile devices.
+    const html = `
+      <div class="mem-card" data-idx="${idx}">
+        <div class="mem-media-wrap">
+          ${isVid ? '<div class="play-icon">▶</div>' : ''}
+          ${isUnset ? `
+            <div class="mem-placeholder">
+              <span>${isVid ? '🎬' : '📷'}</span>
+              <small>${item.caption || (isVid ? 'Video Link Add Karo' : 'Photo Link Add Karo')}</small>
+            </div>
+          ` : isVid ? `
+            <video playsinline preload="metadata" src="${item.src}#t=0.001" muted></video>
+          ` : `
+            <img src="${item.src}" loading="lazy" alt="Ekam memory">
+          `}
+        </div>
+        <div class="mem-caption">${item.caption || ''}</div>
+      </div>
+    `;
+
+    if (isVid) {
+      vHTML += html;
+    } else {
+      pHTML += html;
+    }
+  });
+
+  pCont.innerHTML = pHTML || '<p style="grid-column:1/-1; opacity:0.7">Koi photo nahi mili.</p>';
+  vCont.innerHTML = vHTML || '<p style="grid-column:1/-1; opacity:0.7">Koi video nahi mili.</p>';
+
+  const firstImg = MEMORIES.find(m => m.type === 'image' && !isDefaultLink(m.src));
+  $('#av').innerHTML = firstImg ? `<img src="${firstImg.src}" alt="${NAME}">` : '🎂';
+}
+renderMemories();
+
+/* Lightbox Modal Logic */
+const lightbox = $('#lightbox');
+const lbContent = $('#lightbox-content');
+const lbCaption = $('#lightbox-caption');
+const closeLb = () => {
+  lightbox.classList.remove('active');
+  lbContent.innerHTML = '';
+};
+$('#lightbox-close').onclick = closeLb;
+lightbox.onclick = e => { if (e.target === lightbox) closeLb(); };
+window.addEventListener('keydown', e => { if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLb(); });
+
+const handleMediaClick = e => {
+  const card = e.target.closest('.mem-card');
+  if (!card) return;
+  const item = MEMORIES[+card.dataset.idx];
+  if (isDefaultLink(item.src)) {
+    toast('Is memory ka link JavaScript array me add karein 💖');
+    return;
+  }
+  if (item.type === 'video') {
+    lbContent.innerHTML = `<video controls playsinline autoplay preload="metadata" src="${item.src}"></video>`;
+  } else {
+    lbContent.innerHTML = `<img src="${item.src}" alt="Ekam memory preview">`;
+  }
+  lbCaption.textContent = item.caption || '';
+  lightbox.classList.add('active');
+};
+
+$('#photos-container').addEventListener('click', handleMediaClick);
+$('#videos-container').addEventListener('click', handleMediaClick);  /* Games */ $$('.tab').forEach(b => b.onclick = () => {
+  $$('.tab').forEach(x => x.classList.toggle('on', x === b));$$
+('.gp').forEach((p, i) => p.hidden = i != b.dataset.i);
+});
+let sc = 0, tl = 0, iv, sp;
+const upd = () => $('#bmsg').textContent = `Score: ${sc} · Time: ${tl}s`;
+function spawn() {
+  const b = document.createElement('div');
+  b.className = 'bl';
+  b.style.left = Math.random() * 88 + '%';
+  b.style.background = cols[Math.floor(Math.random() * 4)];
+  b.onpointerdown = () => {
+    if (tl > 0) { sc++; upd(); }
+    b.remove();
+  };
+  b.onanimationend = () => b.remove();
+  $('#arena').append(b);
+}
+$('#bstart').onclick = () => {
+  sc = 0;
+  tl = 20;
+  upd();
+  clearInterval(iv);
+  clearInterval(sp);
+  sp = setInterval(spawn, 450);
+  iv = setInterval(() => {
+    tl--;
+    upd();
+    if (tl <= 0) {
+      clearInterval(iv);
+      clearInterval(sp);
+      $('#bmsg').textContent = `Time up! ${sc} balloons phode 🎉`;
+      boom();
+    }
+  }, 1000);
+};
+
+function mem() {
+  const g = $('#mg');
+  g.innerHTML = '';
+  $('#mm').textContent = 'Pairs milao 💖';
+  let a = null, lock = 0, m = 0;
+  const E = ['🎂', '🎁', '💖', '🎈', '🧸', '🌙'];
+  [...E, ...E].sort(() => Math.random() - .5).forEach(e => {
+    const b = document.createElement('button');
+    b.className = 'mc';
+    b.setAttribute('aria-label', 'card');
+    b.onclick = () => {
+      if (lock || b.classList.contains('up')) return;
+      b.classList.add('up');
+      b.textContent = e;
+      if (!a) { a = b; return; }
+      if (a.textContent === e) {
+        a = null;
+        if (++m == 6) {
+          boom();
+          $('#mm').textContent = 'Sab pairs mil gaye! Genius 🧠💖';
+        }
+      } else {
+        lock = 1;
+        const p = a;
+        a = null;
+        setTimeout(() => {
+          [p, b].forEach(x => {
+            x.classList.remove('up');
+            x.textContent = '';
+          });
+          lock = 0;
+        }, 700);
+      }
+    };
+    g.append(b);
+  });
+}
+mem();
+$('#mr').onclick = mem;
+
+const W = [
+  "Ek tight hug 🤗",
+  "Aaj pizza meri taraf se 🍕",
+  "Ek compliment do: 'tum best ho' 😌",
+  "Selfie bhejo, abhi! 🤳",
+  "Gaana gao (bura ho toh bhi) 🎤",
+  "Ek raaz batao 🤫",
+  "1 ghante tak tumhari har baat maanunga/maanungi 😇",
+  "5 second dance karo 💃"
+];
+$('#spin').onclick = () => {
+  let n = 0;
+  const i = setInterval(() => {
+    $('#wr').textContent = W[Math.floor(Math.random() * W.length)];
+    if (++n > 22) {
+      clearInterval(i);
+      boom({ particleCount: 70 });
+    }
+  }, 90);
+};
+
+/* Cake */
+let lit = 5;
+$('#cs').innerHTML = '<button class="cd" aria-label="candle"></button>'.repeat(5); $$('.cd').forEach(c => c.onclick = () => {
+  if (c.classList.contains('off')) return;
+  c.classList.add('off');
+  if (--lit == 0) {
+    boom({ particleCount: 250, spread: 160 });
+    $('#cm').textContent = 'Wish maang li? 🤫 Ab kisi ko mat batana!';
+  } else {
+    $('#cm').textContent = `${lit} candles baaki hain 💨`;
+  }
+});
+
+/* Letter */
+$('#lb').onclick = () => {
+  $('#lb').hidden = true;
+  const L = $('#lt');
+  L.textContent = '';
+  let i = 0;
+  (function t() {
+    if (i < LETTER.length) {
+      L.textContent += LETTER[i++];
+      setTimeout(t, 28);
+    } else {
+      boom({ particleCount: 220, spread: 140 });
+      $('#rp').hidden = false;
+    }
+  })();
+};
+$('#rp').onclick = () => {
+  scrollTo({ top: 0 });
+  boom();
+};
+
+/* Reveal on scroll & Dock setup */
+$('#mqi').textContent = `happy birthday ${NAME} ✦ party mode on 🎈 ✦ cake time 🎂 ✦ `.repeat(4);
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) {
+    e.target.classList.add('in');
+    io.unobserve(e.target);
+  }
+}), { threshold: .1 });
+
+const navItems = [
+  { id: 'hero', icon: '🏠', label: 'Home' },
+  { id: 'age', icon: '⏳', label: 'Age' },
+  { id: 'memories', icon: '📸', label: 'Memories' },
+  { id: 'games', icon: '🎮', label: 'Games' },
+  { id: 'cake', icon: '🎂', label: 'Cake' },
+  { id: 'letter', icon: '💖', label: 'Letter' }
+];
+
+$$('.sec').forEach(s => {
+  s.classList.add('rv');
+  io.observe(s);
+});
+
+const dk = document.createElement('nav');
+dk.id = 'dock';
+dk.innerHTML = navItems.map(item => `<a href="#${item.id}" aria-label="${item.label}">${item.icon}</a>`).join('');
+document.body.append(dk);
+
+/* Custom cursor */
+if (matchMedia('(hover:hover) and (pointer:fine)').matches) {
+  const c = document.createElement('div');
+  c.id = 'cur';
+  document.body.append(c);
+  let x = 0, y = 0, tx = 0, ty = 0;
+  addEventListener('pointermove', e => { tx = e.clientX; ty = e.clientY; });
+  (function f() {
+    x += (tx - x) * .18;
+    y += (ty - y) * .18;
+    c.style.left = x + 'px';
+    c.style.top = y + 'px';
+    requestAnimationFrame(f);
+  })();
+  document.addEventListener('pointerover', e => c.classList.toggle('big', !!(e.target.closest && e.target.closest('button,a,label,.bl,.mem-card'))));
+}
+</script></body></html>
